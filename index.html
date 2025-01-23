@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: url("../telegram/bubble-pattern.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes buttonBounce {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .container {
+        padding: 50px;
+        animation: fadeIn 1s ease-in-out;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* Neon Blue Border and Box Shadow */
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0 0 20px 5px hwb(0 0% 96% / 0.5); /* Neon shadow */
+        max-width: 90%; /* Ensure it doesn't take up too much space on small screens */
+        width: 600px; /* Set a max width for larger screens */
+        margin: 20px;
+      }
+
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 5px solid #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .name {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .tagline {
+        font-size: 24px;
+        margin: 10px 0;
+        animation: fadeIn 2.5s ease-in-out;
+      }
+
+      .tagline span {
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .join-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 26px;
+        font-weight: 600;
+        border-radius: 25px;
+        margin: 20px 0;
+        text-decoration: none;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 3s ease-in-out,
+          buttonBounce 2s ease-in-out infinite alternate;
+      }
+
+      .join-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .description {
+        font-size: 24px;
+        font-weight: 600;
+        color: #000;
+        max-width: 600px;
+        margin: 0 auto;
+        animation: fadeIn 3.5s ease-in-out;
+      }
+
+      .description .emoji {
+        font-size: 20px;
+      }
+
+      /* Counter Badge Styling */
+      .counter-container {
+        background-color: #007bff;
+        width: 150px;
+        height: 60px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        animation: fadeIn 4s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .counter {
+        font-size: 28px;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px; /* Reduced padding */
+          width: 90%;
+        }
+
+        .profile-pic {
+          width: 100px;
+          height: 100px;
+        }
+
+        .name {
+          font-size: 28px;
+          font-weight: 500; /* Reduced font weight */
+        }
+
+        .tagline {
+          font-size: 20px;
+        }
+
+        .join-btn {
+          font-size: 22px;
+        }
+
+        .description {
+          font-size: 20px;
+        }
+
+        .counter {
+          font-size: 24px;
+        }
+
+        .counter-container {
+          margin-top: 20px; /* Reduced margin-top for the counter */
+        }
+      }
+
+      /* Additional mobile tweaks for very small screens */
+      @media (max-width: 480px) {
+        .container {
+          padding: 15px; /* Even smaller padding */
+        }
+
+        .name {
+          font-size: 24px;
+          font-weight: 400; /* Further reduced font weight */
+        }
+
+        .tagline {
+          font-size: 18px;
+        }
+
+        .join-btn {
+          font-size: 20px;
+        }
+
+        .description {
+          font-size: 18px;
+        }
+
+        .counter {
+          font-size: 22px;
+        }
+
+        .counter-container {
+          margin-top: 10px; /* More compact counter */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="../telegram/profile.jpeg"
+        alt="Profile Picture"
+        class="profile-pic"
+      />
+      <h1 class="name">The Trade Bazaar</h1>
+      <h2 class="tagline">Don’t Miss Out <span>Join Today!</span></h2>
+      <a href="https://t.me/the_trade_bazaar" class="join-btn">⚡ Join Channel 💰🚀</a>
+      <p class="description">
+        Join our Telegram Channel and embark on a journey to financial freedom!
+        💰🔄 Get insider tips, exclusive opportunities, and a community of
+        like-minded earners. Join the movement now 🚀
+      </p>
+
+      <!-- Counter with minimized background and centered text -->
+      <div class="counter-container" id="counterContainer">
+        <div class="counter" id="counter">10</div>
+      </div>
+    </div>
+
+    <script>
+      // Counter logic
+      let count = 10;
+      const counterElement = document.getElementById("counter");
+      const counterContainer = document.getElementById("counterContainer");
+
+      const countdown = setInterval(() => {
+        count--;
+        counterElement.textContent = count;
+
+        if (count === 0) {
+          clearInterval(countdown);
+          // Hide the full counter badge when counter reaches 0
+          counterContainer.classList.add("hidden");
+        }
+      }, 1000); // Countdown interval set to 1 second
+    </script>
+  </body>
+</html>
